@@ -2,9 +2,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 0.3s ease;
+    transition: 0.7s ease;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --base-title: #787878;
     --base-bg: #F7F7F7;
@@ -149,6 +151,7 @@ footer .social-media a:hover
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    background-color: var(--base-border);
     transition: 0.3s ease;
 }
 
@@ -181,8 +184,9 @@ footer .social-media a:hover
     align-items: center;
     font-size: 25px;
     color: var(--base-txt);
-    background-color: var(--base-hover);
-    transition: 0.3s ease;
+    background-color: var(--base-border);
+    transition: 0.8s ease;
+    transform: translateY(250%);
 }
 .dark-mode #toUp {
     color: var(--txt-nav-dark);
@@ -191,4 +195,15 @@ footer .social-media a:hover
 .dark-mode #toUp:hover,
 .dark-mode #changeMode:hover{
     background-color: var(--base-hover);
+}
+
+
+/* scroll */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--base-border);
+    border-radius: 50px;
 }

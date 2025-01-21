@@ -9,6 +9,16 @@ for (let i = 0; i < btns.length; i++){
         this.className += " active";
     });
 }
+//? Fixed nav scrolling
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        let toDark = document.body.classList.contains("dark-mode");
+        let color = toDark ? "black" : "white";
+        btnContainer.style.cssText = `position: fixed; top: 0; background-color: ${color};`;
+    } else {
+        btnContainer.style.cssText = 'position: relative;';
+    }
+})
 // ? Dark mode
 let darkMode = localStorage.getItem('darkMode');
 const changeMode = document.getElementById('changeMode');
@@ -25,3 +35,16 @@ changeMode.addEventListener('click', () => {
     darkMode = localStorage.getItem('darkMode');
     darkMode !== "active" ? enableDarkMode() : disableDarkMode();
 });
+// ? Arrow to home
+let arrow = document.getElementById('toUp');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        arrow.style.cssText = 'transform: translateY(0);';
+    } else {
+        arrow.style.cssText = 'transform: translateY(250%);';
+    }
+});
+
+
+
+console.log(document.body.classList.contains("dark-mode"));
