@@ -92,7 +92,7 @@ header .top-nav ul li a:hover,
 main {
     display: flex;
     justify-content: space-evenly;
-    margin: 4rem 0 7rem;
+    margin: 4rem 0;
 }
 
 main .container-l,
@@ -107,6 +107,39 @@ main img {
     border-radius: 5px;
     margin-bottom: 20px;
     border: var(--px-border) solid var(--base-border);
+}
+/* Contact Start */
+#contact {
+    margin: 0 3rem 13rem 3rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#contact article,#contact form {
+    width: 50%;
+}
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact article p {
+    font-size: 3.5em;
+    white-space: pre;
+    color: var(--base-txt);
+}
+
+#contact > form input,
+#contact > form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--base-border);
+    border-radius: 5px;
+    outline: none;
+    resize: none;
 }
 
 /* Footer Start */
