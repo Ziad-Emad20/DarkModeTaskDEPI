@@ -44,7 +44,3 @@ window.addEventListener('scroll', () => {
         arrow.style.cssText = 'transform: translateY(250%);';
     }
 });
-
-
-
-console.log(document.body.classList.contains("dark-mode"));
