@@ -52,18 +52,14 @@
     <!-- Start Contact -->
     <section id="contact">
         <article>
-            <p>Feel free to contact me, <br>book now.</span></p>
+            <p>Feel free to contact me, <br>book now.</p>
         </article>
-        <form action="" method="post"">
-            <div>
+        <form action="" method="post">
                 <input type="text" id="name" name="name" required placeholder="Name:">
-                <input type="email" id="email" name="email" required placeholder="Email:">
-                <div>
-                    <label for="date">Booking date</label><br>
+                <input type="number" id="phone" name="phone" required placeholder="Phone:">
+                    <label class="label-date" for="date">Booking date:</label><br>
                     <input type="date" name="date" id="date" placeholder="Date:">
-                </div>
                 <textarea id="message" name="message" required placeholder="Message:"></textarea>
-            </div>
             <button type="submit" class="btn">Submit</button>
         </form>
 
