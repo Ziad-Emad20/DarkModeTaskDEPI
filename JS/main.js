@@ -13,12 +13,15 @@ for (let i = 0; i < btns.length; i++){
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
         let toDark = document.body.classList.contains("dark-mode");
+        changeMode.style.display = "none";
         let color = toDark ? "black" : "white";
         btnContainer.style.cssText = `position: fixed; top: 0; background-color: ${color};`;
     } else {
+        changeMode.style.display = "block";
         btnContainer.style.cssText = 'position: relative;';
     }
 })
+
 // ? Dark mode
 let darkMode = localStorage.getItem('darkMode');
 const changeMode = document.getElementById('changeMode');
@@ -35,6 +38,16 @@ changeMode.addEventListener('click', () => {
     darkMode = localStorage.getItem('darkMode');
     darkMode !== "active" ? enableDarkMode() : disableDarkMode();
 });
+// ? Dark Mode Disabled in Mobile Size
+//? Fixed nav scrolling
+window.addEventListener('scroll', () => {
+    let DarkMobile = window.scrollY > 250 ? "none" : "block";
+    if (window.scrollY > 300) {
+        changeMode.style.display = `${DarkMobile}`;
+    } else {
+        changeMode.style.display = `${DarkMobile}`;
+    }
+})
 // ? Arrow to home
 let arrow = document.getElementById('toUp');
 window.addEventListener('scroll', () => {

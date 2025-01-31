@@ -4,9 +4,11 @@ body {
     box-sizing: border-box;
     transition: 0.7s ease;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 :root {
     --base-title: #787878;
     --base-bg: #F7F7F7;
@@ -88,6 +90,7 @@ header .top-nav ul li a:hover,
     color: var(--txt-nav-dark);
     background-color: var(--base-bg);
 }
+
 .dark-mode .active {
     color: var(--txt-nav-dark);
 }
@@ -96,6 +99,7 @@ header .top-nav ul li a:hover,
 main {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin: 4rem 0;
 }
 
@@ -112,18 +116,20 @@ main img {
     margin-bottom: 20px;
     border: var(--px-border) solid var(--base-border);
 }
+
 /* Contact Start */
 #contact {
     margin: 0 3rem 13rem 3rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
 }
 
-#contact article,#contact form {
+#contact article,
+#contact form {
     width: 50%;
 }
+
 #contact form {
     display: flex;
     flex-direction: column;
@@ -136,9 +142,8 @@ main img {
     color: var(--base-title);
 }
 
-#contact > form input,
-#contact > form textarea
-{
+#contact>form input,
+#contact>form textarea {
     width: 75%;
     padding: 15px;
     margin-bottom: 10px;
@@ -150,16 +155,18 @@ main img {
     caret-color: var(--base-txt);
     color: var(--base-txt-form);
 }
-::placeholder{
+
+::placeholder {
     color: var(--base-txt-form);
 }
-#contact > form .label-date{
+
+#contact>form .label-date {
     color: var(--base-title);
     font-size: 20px;
 }
 
 
-#contact > form button[type="submit"]{
+#contact>form button[type="submit"] {
     background-color: var(--base-title);
     color: var(--txt-tranfare);
     border: none;
@@ -169,7 +176,7 @@ main img {
     transition: background-color 0.3s ease;
 }
 
-#contact > form button[type="submit"]:hover{
+#contact>form button[type="submit"]:hover {
     background-color: var(--base-hover);
 }
 
@@ -183,8 +190,9 @@ footer {
     left: 0;
     width: 100%;
 }
+
 .dark-mode footer {
-    background-color:  var(--txt-nav-dark);
+    background-color: var(--txt-nav-dark);
     color: var(--base-txt);
 }
 
@@ -195,8 +203,7 @@ footer .social-media a {
     transition: color 0.3s ease;
 }
 
-footer .social-media a:hover
- {
+footer .social-media a:hover {
     color: var(--base-hover);
 
 }
@@ -219,20 +226,23 @@ footer .social-media a:hover
     transition: 0.3s ease;
 }
 
-#changeMode i:last-child{
+#changeMode i:last-child {
     display: none;
 }
 
-#changeMode i:first-child{
+#changeMode i:first-child {
     color: var(--base-txt);
 }
-.dark-mode #changeMode i:first-child{
+
+.dark-mode #changeMode i:first-child {
     display: none;
     color: var(--base-txt);
 }
-.dark-mode #changeMode i:last-child{
+
+.dark-mode #changeMode i:last-child {
     display: block;
 }
+
 #toUp {
     position: fixed;
     right: 20px;
@@ -252,12 +262,14 @@ footer .social-media a:hover
     transition: 0.8s ease;
     transform: translateY(250%);
 }
+
 .dark-mode #toUp {
     color: var(--txt-nav-dark);
     background-color: var(--base-bg);
 }
+
 .dark-mode #toUp:hover,
-.dark-mode #changeMode:hover{
+.dark-mode #changeMode:hover {
     background-color: var(--base-hover);
 }
 
@@ -272,3 +284,73 @@ footer .social-media a:hover
     border-radius: 50px;
 }
 
+/*! ---------- Media Queries ---------- !*/
+
+/* Small */
+@media only screen and (max-width: 576px) {
+
+    header .article-home h1,
+    header .article-home h2 {
+        font-size: 2.2em;
+    }
+
+    header .top-nav ul li a {
+        font-size: 18px;
+        padding: 9px 18px;
+    }
+
+    main {
+        margin-bottom: 1.5rem;
+    }
+
+    main .container-l,
+    main .container-r {
+        width: 96%;
+    }
+
+    #contact {
+        margin: 0 1rem 11rem 1rem;
+    }
+
+    #contact article,
+    #contact form {
+        width: 100%;
+    }
+
+    #contact article p {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    footer {
+        padding: 17px 0 7px;
+    }
+}
+
+/* Medium */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Large */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Extra large */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+/* Extra extra large */
+@media only screen and (min-width: 1201) {
+    body {
+        font-size: 22px;
+    }
+}
