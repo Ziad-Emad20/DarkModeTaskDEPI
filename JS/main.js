@@ -13,11 +13,9 @@ for (let i = 0; i < btns.length; i++){
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
         let toDark = document.body.classList.contains("dark-mode");
-        changeMode.style.display = "none";
         let color = toDark ? "black" : "white";
-        btnContainer.style.cssText = `position: fixed; top: 0; background-color: ${color};`;
+        btnContainer.style.cssText = `position: fixed; top: 10px ; background-color: ${color}; `;
     } else {
-        changeMode.style.display = "block";
         btnContainer.style.cssText = 'position: relative;';
     }
 })
@@ -41,12 +39,10 @@ changeMode.addEventListener('click', () => {
 // ? Dark Mode Disabled in Mobile Size
 //? Fixed nav scrolling
 window.addEventListener('scroll', () => {
-    let DarkMobile = window.scrollY > 250 ? "none" : "block";
-    if (window.scrollY > 300) {
+    let widthPage = window.innerWidth;
+    let DarkMobile = window.scrollY > 250 && widthPage <= 500 ? "none" : "block";
         changeMode.style.display = `${DarkMobile}`;
-    } else {
         changeMode.style.display = `${DarkMobile}`;
-    }
 })
 // ? Arrow to home
 let arrow = document.getElementById('toUp');
@@ -57,3 +53,13 @@ window.addEventListener('scroll', () => {
         arrow.style.cssText = 'transform: translateY(250%);';
     }
 });
+// ? Send Mail Message
+let sendMail = () => {
+    let data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        date: document.getElementById('date').value,
+        message: document.getElementById('message').value
+    }
+    emailjs.send("service_b61qm6j", "template_z9l490j", data).then(alert("Send Email"));
+}

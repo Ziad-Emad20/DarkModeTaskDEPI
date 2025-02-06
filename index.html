@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="shortcut icon" href="IMG/icon.png" type="image/x-icon">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "qAXCYMrf2ALuGx0PD",
+            });
+        })();
+    </script>
     <title>Photographer</title>
 </head>
 
@@ -55,12 +64,12 @@
             <p>Feel free to contact me, <br>book now.</p>
         </article>
         <form action="" method="post">
-                <input type="text" id="name" name="name" required placeholder="Name:">
-                <input type="number" id="phone" name="phone" required placeholder="Phone:">
-                    <label class="label-date" for="date">Booking date:</label><br>
-                    <input type="date" name="date" id="date" placeholder="Date:">
-                <textarea id="message" name="message" required placeholder="Message:"></textarea>
-            <button type="submit" class="btn">Submit</button>
+            <input type="text" id="name" name="name" required placeholder="Name:">
+            <input type="number" id="phone" name="phone" required placeholder="Phone:">
+            <label class="label-date" for="date">Booking date:</label><br>
+            <input type="date" name="date" id="date" placeholder="Date:">
+            <textarea id="message" name="message" required placeholder="Message:"></textarea>
+            <button type="submit" class="btn" onclick="sendMail()" >Submit</button>
         </form>
 
     </section>
@@ -71,13 +80,14 @@
             <a href="https://x.com/"><i class="fa-brands fa-square-twitter"></i></a>
             <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
         </div>
-        <p>&copy; 2024 Photographer. All rights reserved.</p>
+        <p class="copy">&copy; 2024 Photographer. All rights reserved.</p>
     </footer>
     <button id="changeMode">
         <i class="fa-solid fa-moon"></i>
         <i class="fa-solid fa-sun"></i>
     </button>
     <a href="#home" id="toUp"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+   
     <script src="JS/main.js"></script>
 </body>
 
